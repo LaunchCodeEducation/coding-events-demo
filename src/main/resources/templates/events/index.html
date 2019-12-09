@@ -5,6 +5,8 @@
 
 <header th:replace="fragments :: header"></header>
 
+<p th:unless="${events} and ${events.size()}">No events</p>
+
 <ul>
     <th:block th:each="event : ${events}">
         <li th:text="${event}"></li>
