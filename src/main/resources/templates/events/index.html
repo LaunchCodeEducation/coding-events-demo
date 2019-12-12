@@ -4,12 +4,21 @@
 <body>
 
 <header th:replace="fragments :: header"></header>
+<div style="margin: 30px;">
+<table>
+    <tr>
+        <td>Name</td>
+        <td>Event</td>
 
-<ul>
+    </tr>
     <th:block th:each="event : ${events}">
-        <li th:text="${event}"></li>
-    </th:block>
-</ul>
+    <tr>
+        <td th:text="${event.key}">Name</td>
+        <td th:text="${event.value}">Event</td>
 
+    </tr>
+    </th:block>
+</table>
+</div>
 </body>
 </html>
