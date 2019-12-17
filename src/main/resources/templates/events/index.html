@@ -14,12 +14,16 @@
 <table class="table table-stripped" >
     <thead>
     <tr>
+        <th>Id</th>
         <th>Name</th>
         <th>Description</th>
+        <th>Location</th>
     </tr>
     <tr th:each="event : ${events}">
+        <td th:text="${event.id}"></td>
         <td th:text="${event.name}"></td>
         <td th:text="${event.description}"></td>
+        <td th:text="${event.location}"></td>
     </tr>
     </thead>
 </table>
