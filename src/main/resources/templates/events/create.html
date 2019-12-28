@@ -19,6 +19,12 @@
         <p class="error" th:errors="${event.description}"></p>
     </div>
     <div class="form-group">
+        <label>Event Location
+            <input th:field="${event.eventLocation}" class="form-control">
+        </label>
+        <p class="error" th:errors="${event.eventLocation}"></p>
+    </div>
+    <div class="form-group">
         <label>Contact Email
             <input th:field="${event.contactEmail}" class="form-control">
         </label>
