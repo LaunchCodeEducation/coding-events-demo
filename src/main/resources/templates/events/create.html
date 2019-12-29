@@ -31,6 +31,18 @@
         <p class="error" th:errors="${event.contactEmail}"></p>
     </div>
     <div class="form-group">
+        <label>Is registration required?
+            <input th:field="${event.registrationRequired}" class="form-control">
+        </label>
+        <p class="error" th:errors="${event.registrationRequired}"></p>
+    </div>
+    <div class="form-group">
+        <label>Number Attending
+            <input type="number" th:field="${event.numAttending}" class="form-control">
+        </label>
+        <p class="error" th:errors="${event.numAttending}"></p>
+    </div>
+    <div class="form-group">
         <input type="submit" value="Create" class="btn btn-success">
     </div>
 </form>
