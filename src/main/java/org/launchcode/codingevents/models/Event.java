@@ -8,25 +8,30 @@ import java.util.Objects;
 public class Event {
     private int id;
     private static int nextId = 1;
-    @NotBlank(message = "")
+    @NotBlank(message = "Name is required")
     @Size(min = 3,max = 50,message = "Name must be between 3 and 50 characters")
     private String name;
     @Size(max = 500 ,message = "Description is too long")
     private String description;
-    @Email(message = "Inavlid Email.Try again")
+    @NotBlank(message="Email is required")
+    @Email(message = "Invalid Email.Try again")
     private String contactEmail;
-    @NotBlank
+    @NotBlank(message = "Location is required")
     @Size(max = 50)
     private String location;
     public Event(String name,String description,String location,String contactEmail) {
+        this();
         this.name = name;
         this.description = description;
         this.location = location;
         this.contactEmail = contactEmail;
+//        this.id = nextId;
+//        nextId++;
+    }
+    public Event(){
         this.id = nextId;
         nextId++;
     }
-
     public String getName() {
         return name;
     }
