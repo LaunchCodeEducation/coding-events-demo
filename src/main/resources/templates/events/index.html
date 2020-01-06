@@ -19,6 +19,7 @@
         <th>Description</th>
         <th>Location</th>
         <th>Contact Email</th>
+        <th>NumberOfPeople</th>
     </tr>
     <tr th:each="event : ${events}">
         <td th:text="${event.id}"></td>
@@ -26,6 +27,7 @@
         <td th:text="${event.description}"></td>
         <td th:text="${event.location}"></td>
         <td th:text="${event.contactEmail}"></td>
+        <td th:text="${event.noOfPeople}"></td>
     </tr>
     </thead>
 </table>

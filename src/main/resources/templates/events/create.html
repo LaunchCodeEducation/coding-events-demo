@@ -31,6 +31,18 @@
         <p class="error" th:errors="${event.location}"></p>
     </div>
     <div class="form-group">
+        <label>Number of People
+            <select th:field="${event.noOfPeople}" class="form-control">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+            </select>
+        </label>
+        <p class="error" th:errors="${event.noOfPeople}"></p>
+    </div>
+    <div class="form-group">
         <input type="submit" value="Create" class="btn btn-success">
     </div>
 </form>
