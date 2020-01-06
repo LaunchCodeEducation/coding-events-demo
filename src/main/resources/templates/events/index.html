@@ -20,6 +20,7 @@
         <th>Location</th>
         <th>Contact Email</th>
         <th>NumberOfPeople</th>
+        <th>Type</th>
     </tr>
     <tr th:each="event : ${events}">
         <td th:text="${event.id}"></td>
@@ -28,6 +29,7 @@
         <td th:text="${event.location}"></td>
         <td th:text="${event.contactEmail}"></td>
         <td th:text="${event.noOfPeople}"></td>
+        <td th:text="${event.type.displayName}"></td>
     </tr>
     </thead>
 </table>

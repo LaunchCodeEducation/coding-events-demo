@@ -23,13 +23,15 @@ public class Event {
     private String location;
 //    @Size(min=1,max=5,message = "Atleast one person ")
     private int noOfPeople;
-    public Event(String name,String description,String location,String contactEmail,int noOfPeople) {
+    private EventType type;
+    public Event(String name,String description,String location,String contactEmail,int noOfPeople ,EventType type) {
         this();
         this.name = name;
         this.description = description;
         this.location = location;
         this.contactEmail = contactEmail;
         this.noOfPeople = noOfPeople;
+        this.type = type;
 //        this.id = nextId;
 //        nextId++;
     }
@@ -75,6 +77,14 @@ public class Event {
 
     public void setNoOfPeople(int noOfPeople) {
         this.noOfPeople = noOfPeople;
+    }
+
+    public EventType getType() {
+        return type;
+    }
+
+    public void setType(EventType type) {
+        this.type = type;
     }
 
     public int getId() {
