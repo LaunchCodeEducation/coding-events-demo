@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+<head th:replace="fragments :: head"></head>
+<body class="container">
+
+<header th:replace="fragments :: header"></header>
+
+<form method="post">
+    <div class="form-group">
+        <label>Name
+            <input th:field="${tag.name}" class="form-control">
+        </label>
+        <span th:errors="${tag.name}" class="error"></span>
+    </div>
+    <input type="submit" value="Create" class="btn btn-primary">
+</form>
+
+</body>
+</html>
