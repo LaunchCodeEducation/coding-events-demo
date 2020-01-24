@@ -18,7 +18,15 @@
         <th>Contact Email</th>
         <td th:text="${event.eventDetails.contactEmail}"></td>
     </tr>
+    <tr>
+        <th>Tags</th>
+        <td>
+            <span th:each="tag : ${tags}" th:text="${tag.displayName} + ' '"></span>
+        </td>
+    </tr>
 </table>
+
+<a th:href="'/events/add-tag?eventId=' + ${event.id}">Add Tag</a>
 
 
 </body>
