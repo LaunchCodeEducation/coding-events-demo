@@ -14,15 +14,15 @@
     </div>
     <div class="form-group">
         <label>Description
-            <input th:field="${event.description}" class="form-control">
+            <input th:field="${event.eventDetails.description}" class="form-control">
         </label>
-        <p class="error" th:errors="${event.description}"></p>
+        <p class="error" th:errors="${event.eventDetails.description}"></p>
     </div>
     <div class="form-group">
         <label>Contact Email
-            <input th:field="${event.contactEmail}" class="form-control">
+            <input th:field="${event.eventDetails.contactEmail}" class="form-control">
         </label>
-        <p class="error" th:errors="${event.contactEmail}"></p>
+        <p class="error" th:errors="${event.eventDetails.contactEmail}"></p>
     </div>
     <div class="form-group">
         <label>Category
