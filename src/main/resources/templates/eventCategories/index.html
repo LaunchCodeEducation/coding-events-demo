@@ -4,14 +4,14 @@
 <body class="container">
 
 <header th:replace="fragments :: header"></header>
-<table>
+<table class="table table-stripped">
     <thead>
     <tr>
-        <th>Id</th>
+<!--        <th>Id</th>-->
         <th>Categories</th>
     </tr>
     <tr th:each = "category : ${categories}">
-        <td th:text="${category.id}"></td>
+<!--        <td th:text="${category.id}"></td>-->
         <td th:text="${category.name}"></td>
     </tr>
     </thead>
