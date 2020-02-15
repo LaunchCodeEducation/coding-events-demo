@@ -49,6 +49,8 @@ public class EventController {
         return "events/delete";
     }
 
+
+
     @PostMapping("delete")
     public String processDeleteEventsForm(@RequestParam(required = false) int[] eventIds) {
 
