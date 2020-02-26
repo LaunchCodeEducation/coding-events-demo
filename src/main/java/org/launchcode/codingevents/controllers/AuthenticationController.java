@@ -59,7 +59,6 @@ public class AuthenticationController {
 
         if (errors.hasErrors()) {
             model.addAttribute("title", "Register");
-            model.addAttribute("title", "Register");
             return "register";
         }
 
