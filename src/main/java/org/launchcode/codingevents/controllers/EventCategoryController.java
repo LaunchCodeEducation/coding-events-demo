@@ -23,6 +23,7 @@ public class EventCategoryController {
     @Autowired
     private EventCategoryRepository eventCategoryRepository;
 
+
     @GetMapping
     public String displayAllCategories(Model model) {
         model.addAttribute("title", "All Categories");
