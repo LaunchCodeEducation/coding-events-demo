@@ -10,7 +10,8 @@ import java.util.Map;
  * Created by Chris Bay
  */
 public class EventData {
-
+//encapsulation : we are encapsulating the behavior of storing event objects so that nobody else needs to know how they are stored.
+    // it decouples our application from having to know how things are stored internally
     private static final Map<Integer, Event> events = new HashMap<>();
 
     public static Collection<Event> getAll() {
