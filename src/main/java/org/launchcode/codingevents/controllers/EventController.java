@@ -2,7 +2,10 @@ package org.launchcode.codingevents.controllers;
 
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 =======
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
 import org.launchcode.codingevents.data.EventCategoryRepository;
@@ -20,8 +23,14 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 import java.util.ArrayList;
 import java.util.List;
+=======
+import javax.swing.text.html.Option;
+import javax.validation.Valid;
+import java.util.Optional;
+>>>>>>> Stashed changes
 =======
 import javax.swing.text.html.Option;
 import javax.validation.Valid;
@@ -48,13 +57,19 @@ public class EventController {
     @Autowired
     private EventCategoryRepository eventCategoryRepository;
 
+    @Autowired
+    private EventCategoryRepository eventCategoryRepository;
+
     @GetMapping
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
     public String displayAllEvents(Model model) {
         model.addAttribute("title", "All Events");
         model.addAttribute("events", events);
 =======
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
     public String displayAllEvents(@RequestParam(required = false) Integer categoryId, Model model) {
@@ -74,6 +89,9 @@ public class EventController {
         }
 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
@@ -88,6 +106,9 @@ public class EventController {
         model.addAttribute(new Event());
         model.addAttribute("categories", eventCategoryRepository.findAll() );
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
