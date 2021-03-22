@@ -1,5 +1,6 @@
 package org.launchcode.codingevents.controllers;
 
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
@@ -16,9 +17,12 @@ import org.launchcode.codingevents.models.EventCategory;
 import org.springframework.beans.factory.annotation.Autowired;
 >>>>>>> Stashed changes
 =======
+=======
+import org.launchcode.codingevents.data.EventCategoryRepository;
+>>>>>>> Stashed changes
 import org.launchcode.codingevents.data.EventRepository;
 import org.launchcode.codingevents.models.Event;
-import org.launchcode.codingevents.models.EventType;
+import org.launchcode.codingevents.models.EventCategory;
 import org.springframework.beans.factory.annotation.Autowired;
 >>>>>>> 34c1b4f
 import org.springframework.stereotype.Controller;
@@ -26,6 +30,7 @@ import org.springframework.ui.Model;
 import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.*;
 
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
@@ -50,6 +55,11 @@ import java.util.Optional;
 =======
 import javax.validation.Valid;
 >>>>>>> 34c1b4f
+=======
+import javax.swing.text.html.Option;
+import javax.validation.Valid;
+import java.util.Optional;
+>>>>>>> Stashed changes
 
 /**
  * Created by Chris Bay
@@ -64,6 +74,7 @@ public class EventController {
     @Autowired
     private EventCategoryRepository eventCategoryRepository;
 
+<<<<<<< Updated upstream
     @Autowired
     private EventCategoryRepository eventCategoryRepository;
 
@@ -83,6 +94,9 @@ public class EventController {
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
+=======
+    @GetMapping
+>>>>>>> Stashed changes
     public String displayAllEvents(@RequestParam(required = false) Integer categoryId, Model model) {
 
         if(categoryId ==null){
@@ -101,6 +115,7 @@ public class EventController {
 
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
@@ -109,6 +124,8 @@ public class EventController {
 =======
         model.addAttribute("events", eventRepository.findAll());
 >>>>>>> 34c1b4f
+=======
+>>>>>>> Stashed changes
         return "events/index";
     }
 
@@ -129,8 +146,12 @@ public class EventController {
 >>>>>>> Stashed changes
 =======
         model.addAttribute(new Event());
+<<<<<<< Updated upstream
         model.addAttribute("types", EventType.values());
 >>>>>>> 34c1b4f
+=======
+        model.addAttribute("categories", eventCategoryRepository.findAll() );
+>>>>>>> Stashed changes
         return "events/create";
     }
 

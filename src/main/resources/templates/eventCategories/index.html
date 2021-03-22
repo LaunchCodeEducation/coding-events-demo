@@ -12,11 +12,15 @@
     </tr>
     </thead>
     <tr th:each="category : ${categories}">
+<<<<<<< Updated upstream
 <<<<<<< HEAD
         <td><a th:text="${category.name}" th:href="'/events?categoryId=' + ${category.id}"></a></td>
 =======
         <td th:text="${category.name}"></td>
 >>>>>>> 34c1b4f
+=======
+        <td><a th:text="${category.name}" th:href="'/events?categoryId=' + ${category.id}"></a></td>
+>>>>>>> Stashed changes
     </tr>
 
 </table>

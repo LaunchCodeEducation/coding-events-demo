@@ -3,20 +3,27 @@ package org.launchcode.codingevents.models;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+<<<<<<< Updated upstream
 <<<<<<< HEAD
+=======
+>>>>>>> Stashed changes
 import javax.persistence.OneToMany;
 import javax.validation.constraints.Size;
 import java.util.ArrayList;
 import java.util.List;
+<<<<<<< Updated upstream
 =======
 import javax.validation.constraints.Size;
 >>>>>>> 34c1b4f
+=======
+>>>>>>> Stashed changes
 import java.util.Objects;
 
 /**
  * Created by Chris Bay
  */
 @Entity
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 public class EventCategory extends AbstractEntity {
 
@@ -29,25 +36,36 @@ public class EventCategory extends AbstractEntity {
 
 =======
 public class EventCategory {
+=======
+public class EventCategory extends AbstractEntity {
+>>>>>>> Stashed changes
 
-    @Id
-    @GeneratedValue
-    private int id;
 
-    @Size(min=3, message="Name must be at least 3 characters long")
+    @Size(min = 3, message = "Name must be at least 3 characters long")
     private String name;
 
+<<<<<<< Updated upstream
 >>>>>>> 34c1b4f
+=======
+    @OneToMany(mappedBy = "eventCategory")
+    private final List<Event> events = new ArrayList<>();
+
+>>>>>>> Stashed changes
     public EventCategory(@Size(min = 3, message = "Name must be at least 3 characters long") String name) {
         this.name = name;
     }
 
+<<<<<<< Updated upstream
 <<<<<<< HEAD
     public EventCategory() {
     }
 =======
     public EventCategory() {}
 >>>>>>> 34c1b4f
+=======
+    public EventCategory() {
+    }
+>>>>>>> Stashed changes
 
     public String getName() {
         return name;
@@ -57,6 +75,7 @@ public class EventCategory {
         this.name = name;
     }
 
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 =======
     public int getId() {
@@ -64,11 +83,14 @@ public class EventCategory {
     }
 
 >>>>>>> 34c1b4f
+=======
+>>>>>>> Stashed changes
     @Override
     public String toString() {
         return name;
     }
 
+<<<<<<< Updated upstream
 <<<<<<< HEAD
     public List<Event> getEvents() {
         return events;
@@ -90,3 +112,10 @@ public class EventCategory {
     }
 }
 >>>>>>> 34c1b4f
+=======
+    public List<Event> getEvents() {
+        return events;
+    }
+}
+
+>>>>>>> Stashed changes
