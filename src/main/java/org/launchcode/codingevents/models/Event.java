@@ -1,6 +1,7 @@
 package org.launchcode.codingevents.models;
 
 import javax.persistence.Entity;
+<<<<<<< HEAD
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.validation.constraints.Email;
@@ -9,13 +10,29 @@ import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import java.util.ArrayList;
 import java.util.List;
+=======
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Size;
+import java.util.Objects;
+>>>>>>> 34c1b4f
 
 /**
  * Created by Chris Bay
  */
 @Entity
+<<<<<<< HEAD
 public class Event extends AbstractEntity {
 
+=======
+public class Event {
+
+    @Id
+    @GeneratedValue
+    private int id;
+>>>>>>> 34c1b4f
 
     @NotBlank(message = "Name is required")
     @Size(min = 3, max = 50, message = "Name must be between 3 and 50 characters")
@@ -28,6 +45,7 @@ public class Event extends AbstractEntity {
     @Email(message = "Invalid email. Try again.")
     private String contactEmail;
 
+<<<<<<< HEAD
     @ManyToOne
     @NotNull(message = "Category is Required")
     private EventCategory eventCategory;
@@ -41,6 +59,18 @@ public class Event extends AbstractEntity {
 
     public Event() {
     }
+=======
+    private EventType type;
+
+    public Event(String name, String description, String contactEmail, EventType type) {
+        this.name = name;
+        this.description = description;
+        this.contactEmail = contactEmail;
+        this.type = type;
+    }
+
+    public Event() {}
+>>>>>>> 34c1b4f
 
     public String getName() {
         return name;
@@ -66,6 +96,7 @@ public class Event extends AbstractEntity {
         this.contactEmail = contactEmail;
     }
 
+<<<<<<< HEAD
     public EventCategory getEventCategory() {
         return eventCategory;
     }
@@ -75,11 +106,41 @@ public class Event extends AbstractEntity {
     }
 
 
+=======
+    public EventType getType() {
+        return type;
+    }
+
+    public void setType(EventType type) {
+        this.type = type;
+    }
+
+    public int getId() {
+        return id;
+    }
+>>>>>>> 34c1b4f
 
     @Override
     public String toString() {
         return name;
     }
+<<<<<<< HEAD
 }
 
 
+=======
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Event event = (Event) o;
+        return id == event.id;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id);
+    }
+}
+>>>>>>> 34c1b4f

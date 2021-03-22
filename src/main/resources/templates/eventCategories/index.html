@@ -12,7 +12,11 @@
     </tr>
     </thead>
     <tr th:each="category : ${categories}">
+<<<<<<< HEAD
         <td><a th:text="${category.name}" th:href="'/events?categoryId=' + ${category.id}"></a></td>
+=======
+        <td th:text="${category.name}"></td>
+>>>>>>> 34c1b4f
     </tr>
 
 </table>
