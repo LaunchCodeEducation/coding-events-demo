@@ -12,6 +12,7 @@
             <th>Name</th>
             <th>Description</th>
             <th>Contact Email</th>
+            <th>Type</th>
         </tr>
     </thead>
     <tr th:each="event : ${events}">
@@ -19,6 +20,10 @@
         <td th:text="${event.name}"></td>
         <td th:text="${event.description}"></td>
         <td th:text="${event.contactEmail}"></td>
+        <td th:text="${event.type.displayName}"></td>
+        <td>
+            <a th:href="@{/events/edit/{id}(id=${event.id})}">Edit</a>
+        </td>
     </tr>
 </table>
 
