@@ -6,13 +6,11 @@
         <table class="table table-striped">
                 <thead>
                     <tr>
-                        <th>ID</th>
-                        <th>Name</th>
+                        <th>Category Name</th>
                     </tr>
                 </thead>
                 <tr th:each="category : ${categories}">
-                    <td th:text="${category.id}"></td>
-                    <td th:text="${category.name}"></td>
+                    <td><a th:text="${category.name}" th:href="'/events?categoryId=' + ${category.id}"></a></td>
                 </tr>
         </table>
     </body>

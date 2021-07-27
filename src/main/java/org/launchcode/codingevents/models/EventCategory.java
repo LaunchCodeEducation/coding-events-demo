@@ -1,21 +1,21 @@
 package org.launchcode.codingevents.models;
 
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
-public class EventCategory {
+public class EventCategory extends AbstractEntity{
 
-    @Id
-    @GeneratedValue
-    int id;
+    @OneToMany(mappedBy = "category")
+    private final List<Event> events = new ArrayList<>();
 
-    @NotBlank(message="Name is required.")
-    @Size(min=3, max=50, message="Must be between 3-50 characters.")
-    String name;
+    @NotBlank(message = "Name is required")
+    @Size(min = 3, max = 50, message = "Name must be between 3 and 50 characters")
+    private String name;
 
     public EventCategory() {}
 
@@ -23,12 +23,13 @@ public class EventCategory {
         this.name = name;
     }
 
-    public int getId() {
-        return id;
+    public List<Event> getEvents() {
+        return events;
     }
 
-    public void setID(int id) {
-        this.id = id;
+    @Override
+    public String toString() {
+        return name;
     }
 
     public String getName() {
