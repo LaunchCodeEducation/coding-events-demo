@@ -7,22 +7,17 @@
 
 <table class="table table-striped">
     <thead>
-        <tr>
-            <th>ID</th>
-            <th>Name</th>
-            <th>Description</th>
-            <th>Contact Email</th>
-            <th>Category</th>
-        </tr>
+    <tr>
+        <th>Event Name</th>
+    </tr>
     </thead>
     <tr th:each="event : ${events}">
-        <td th:text="${event.id}"></td>
-        <td th:text="${event.name}"></td>
-        <td th:text="${event.eventDetails.description}"></td>
-        <td th:text="${event.eventDetails.contactEmail}"></td>
-        <td th:text="${event.category}"></td>
+        <td><a th:text="${event.name}" th:href="'/events/details?eventId=' + ${event.id}"></a></td>
     </tr>
 </table>
-
+<ul class="nav">
+    <li class="nav-item"><a class="nav-link" href="/events/create">Create Event</a></li>
+    <li class="nav-item"><a class="nav-link" href="/events/delete">Delete Events</a></li>
+</ul>
 </body>
 </html>

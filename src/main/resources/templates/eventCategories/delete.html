@@ -2,21 +2,19 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org/">
 <head th:replace="fragments :: head"></head>
 <body class="container">
-
 <header th:replace="fragments :: header"></header>
-
 <form method="post">
     <table class="table table-striped">
         <thead>
-        <th>Event Name</th>
+        <th>Event Category</th>
         <th>Delete</th>
         </thead>
-        <tr th:each="event: ${events}">
+        <tr th:each="category : ${categories}">
             <td>
-                <a th:text="${event.name}"></a>
+                <a th:text="${category.name}"></a>
             </td>
             <td>
-                <input input type="checkbox" name="eventIds" th:value="${event.id}" class="form-control"></input>
+                <input type="checkbox" name="categoryIds" th:value="${category.id}" class="form-control">
             </td>
         </tr>
     </table>
