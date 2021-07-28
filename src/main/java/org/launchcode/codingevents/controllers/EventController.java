@@ -77,13 +77,11 @@ public class EventController {
 
     @PostMapping("delete")
     public String processDeleteEventsForm(@RequestParam(required = false) int[] eventIds) {
-
         if (eventIds != null) {
             for (int id : eventIds) {
                 eventRepository.deleteById(id);
             }
         }
-
         return "redirect:";
     }
 
@@ -128,4 +126,26 @@ public class EventController {
         return "redirect:add-tag";
     }
 
+    @GetMapping("edit")
+    public String displayEditEvent(@RequestParam Integer eventId, Model model) {
+        Optional<Event> result = eventRepository.findById(eventId);
+        Event event = result.get();
+        model.addAttribute("title", "Edit event: " + event.getName());
+        model.addAttribute("event", event);
+        model.addAttribute("categories", eventCategoryRepository.findAll());
+        return "events/edit";
+    }
+
+    @PostMapping("edit")
+    public String processEditEvent(@ModelAttribute @Valid Event editEvent, @RequestParam Integer eventId, Errors errors, Model model) {
+        if (!errors.hasErrors()) {
+            Optional<Event> result = eventRepository.findById(eventId);
+            Event event = result.get();
+            eventRepository.delete(event);
+            eventRepository.save(editEvent);
+            return "redirect:details?eventId=" + editEvent.getId();
+        }
+        model.addAttribute("title", "Edit Event");
+        return "events/edit";
+    }
 }

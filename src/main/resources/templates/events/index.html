@@ -1,23 +1,23 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org/">
-<head th:replace="fragments :: head"></head>
-<body class="container">
+    <head th:replace="fragments :: head"></head>
+    <body class="container">
 
-<header th:replace="fragments :: header"></header>
+        <header th:replace="fragments :: header"></header>
 
-<table class="table table-striped">
-    <thead>
-    <tr>
-        <th>Event Name</th>
-    </tr>
-    </thead>
-    <tr th:each="event : ${events}">
-        <td><a th:text="${event.name}" th:href="'/events/details?eventId=' + ${event.id}"></a></td>
-    </tr>
-</table>
-<ul class="nav">
-    <li class="nav-item"><a class="nav-link" href="/events/create">Create Event</a></li>
-    <li class="nav-item"><a class="nav-link" href="/events/delete">Delete Events</a></li>
-</ul>
-</body>
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th>Event Name</th>
+            </tr>
+            </thead>
+            <tr th:each="event : ${events}">
+                <td><a th:text="${event.name}" th:href="'/events/details?eventId=' + ${event.id}"></a></td>
+            </tr>
+        </table>
+        <ul class="nav">
+            <li class="nav-item"><a class="nav-link" href="/events/create">Create Event</a></li>
+            <li class="nav-item"><a class="nav-link" href="/events/delete">Delete Events</a></li>
+        </ul>
+    </body>
 </html>

@@ -28,9 +28,10 @@
                     <span th:each="tag : ${tags}" th:text="${tag.displayName} + ' '"></span>
                 </td>
             </tr>
-            <th>
-                <a th:href="'/events/add-tag?eventId=' + ${event.id}">Add Tags</a>
-            </th>
         </table>
+        <ul class="nav">
+            <li class="nav-item"><a class="nav-link" th:href="'/events/add-tag?eventId=' + ${event.id}">Add Tags</a></li>
+            <li class="nav-item"><a class="nav-link" th:href="'/events/edit?eventId=' + ${event.id}">Edit Event</a></li>
+        </ul>
     </body>
 </html>
