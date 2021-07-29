@@ -42,7 +42,11 @@ public class TagController {
             model.addAttribute("title", "Create Tag");
             return "tags/create";
         }
-        tagRepository.save(newTag);
+        for (Tag tag : tagRepository.findAll()) {
+            if (!tag.getName().equals(newTag.getName())){
+                tagRepository.save(newTag);
+            }
+        }
         return "redirect:";
     }
 
