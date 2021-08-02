@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+<head th:replace="fragments :: head"></head>
+<body class="container">
+<header th:replace="fragments :: header"></header>
+<form method="post">
+    <table class="table table-striped">
+        <thead>
+        <th>Event Category</th>
+        <th>Delete</th>
+        </thead>
+        <tr th:each="category : ${categories}">
+            <td>
+                <a th:text="${category.name}"></a>
+            </td>
+            <td>
+                <input type="checkbox" name="categoryIds" th:value="${category.id}" class="form-control">
+            </td>
+        </tr>
+    </table>
+    <input type="submit" value="Delete" class="btn btn-danger">
+</form>
+</body>
+</html>

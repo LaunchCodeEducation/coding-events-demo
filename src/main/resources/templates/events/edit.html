@@ -26,17 +26,17 @@
     </div>
     <div class="form-group">
         <label>Category
-        <select th:field="${event.category}">
-            <option th:each="category : ${categories}"
-                    th:value="${category.id}"
-                    th:text="${category.name}"
-            ></option>
-        </select>
+            <select th:field="${event.category}">
+                <option th:each="category : ${categories}"
+                        th:value="${category.id}"
+                        th:text="${category.name}"
+                ></option>
+            </select>
             <p class="error" th:errors="${event.category}"></p>
         </label>
     </div>
     <div class="form-group">
-        <input type="submit" value="Create" class="btn btn-success">
+        <input type="submit" value="Save" class="btn btn-success">
     </div>
 </form>
 
