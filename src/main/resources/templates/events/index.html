@@ -1,18 +1,23 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org/">
 <head th:replace="fragments :: head"></head>
-<body class="container">
+<body>
 
 <header th:replace="fragments :: header"></header>
-
 <table class="table table-striped">
     <thead>
     <tr>
-        <th>Event Name</th>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Description</th>
+        <th>Contact Email</th>
     </tr>
     </thead>
     <tr th:each="event : ${events}">
-        <td><a th:href="'/events/detail?eventId=' + ${event.id}" th:text="${event.name}"></a></td>
+        <td th:text="${event.id}"></td>
+        <td th:text="${event.name}"></td>
+        <td th:text="${event.description}"></td>
+        <td th:test="${event.contactEmail}"></td>
     </tr>
 </table>
 
