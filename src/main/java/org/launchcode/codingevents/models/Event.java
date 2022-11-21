@@ -11,6 +11,7 @@ import java.util.Objects;
 /**
  * Created by Chris Bay
  */
+
 @Entity
 public class Event {
 
@@ -38,7 +39,8 @@ public class Event {
         this.type = type;
     }
 
-    public Event() {}
+    public Event() {
+    }
 
     public String getName() {
         return name;
