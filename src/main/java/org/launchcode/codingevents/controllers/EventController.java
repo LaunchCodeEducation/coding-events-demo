@@ -67,6 +67,12 @@ public class EventController {
             model.addAttribute("title", "Create Event");
             return "events/create";
         }
+        Event oldEvent = eventRepository.findByName(newEvent.getName());
+        if (oldEvent != null) {
+            errors.rejectValue("name", "duplicate", "An event with the same name already exists");
+            model.addAttribute("title", "Create Event");
+            return "events/create";
+        }
 
         eventRepository.save(newEvent);
         return "redirect:";
