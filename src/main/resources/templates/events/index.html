@@ -5,11 +5,27 @@
 
 <header th:replace="fragments :: header"></header>
 
-<ul>
-    <th:block th:each="event : ${events}">
-        <li th:text="${event}"></li>
-    </th:block>
-</ul>
+<table class = "table table-striped">
+    <tread>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Date</th>
+            <th>Location</th>
+        </tr>
+    </tread>
+    <tr th:each="event:${events}">
+        <td th:text="${event.id}"></td>
+      <td th:text="${event.name}"></td>
+        <td th:text="${event.description}"></td>
+        <td th:text="${event.date}"></td>
+        <td th:text="${event.location}"></td>
+        <td>
+            <a th:href="@{/events/edit/{id}(id=${event.id})}">Edit</a>
+        </td>
+    </tr>
+</table>
 
 </body>
 </html>
